@@ -303,8 +303,10 @@ clear i ans index
 % to visualize that sequence/file
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-samples = [startstopsFS(20,1),startstopsFS(20,2)];
+% for i = 1:length(startstops)
+samples = [startstopsFS(i,1),startstopsFS(i,2)];
 [USVseq, Fs] = audioread(USVwavFile, samples);
 figure; 
 spectrogram(USVseq,125,100,100,Fs,'yaxis', 'MinThreshold', -100);
 % view(3) %for 3D viz use this
+% end
